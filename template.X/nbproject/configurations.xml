@@ -24,8 +24,8 @@
         <itemPath>timer1.c</itemPath>
         <itemPath>uart.c</itemPath>
         <itemPath>ccp_capture.c</itemPath>
-        <itemPath>i2c.c</itemPath>
-        <itemPath>spi.c</itemPath>
+        <itemPath>mssp_i2c.c</itemPath>
+        <itemPath>mssp_spi.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>isr.c</itemPath>

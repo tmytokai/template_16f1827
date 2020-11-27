@@ -1,4 +1,0 @@
-//
-// SPI
-//
-#include "setting.h"

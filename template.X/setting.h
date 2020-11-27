@@ -29,6 +29,9 @@
 // Compare 割り込みを使う場合はコメントアウトを解除してください
 //#define USE_CCP1_COMPARE
 
+// I2C を使う場合はコメントアウトを解除してください
+//#define USE_MSSP1_I2C
+
 #include <xc.h>
 
 void init(void);
@@ -73,6 +76,14 @@ void init_timer1(void);
 
 #ifdef USE_CCP1_COMPARE
 void init_ccp1_compare(void);
+#endif
+
+#ifdef USE_MSSP1_I2C
+void init_mssp1_i2c(void);
+void mssp1_i2c_start(void);
+void mssp1_i2c_stop(void);
+void mssp1_i2c_putch( char data );
+int mssp1_i2c_getch( unsigned char nack );
 #endif
 
 #endif
