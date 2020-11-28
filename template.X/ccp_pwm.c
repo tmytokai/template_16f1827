@@ -9,7 +9,7 @@
 
 #ifdef USE_CCP1_PWM
 
-// CCP1 初期化
+// CCP1 を PWM モードで初期化
 void init_ccp1_pwm(void)
 {
     // 0 をセットするとRB3(9 pin) を CCP1 の PWM 出力とします
