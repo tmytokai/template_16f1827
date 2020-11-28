@@ -20,14 +20,17 @@
 //#define USE_CCP3_PWM
 //#define USE_CCP4_PWM
 
-// RB0/INT外部割り込みを使う場合はコメントアウトを解除してください
+// INT 割り込みを使う場合はコメントアウトを解除してください
 //#define USE_RB0INT
 
-// タイマー1割り込みを使う場合はコメントアウトを解除してください
+// タイマー割り込みを使う場合はコメントアウトを解除してください
 //#define USE_TIMER1
 
 // Compare 割り込みを使う場合はコメントアウトを解除してください
 //#define USE_CCP1_COMPARE
+
+// SPI を使う場合はコメントアウトを解除してください
+//#define USE_MSSP1_SPI
 
 // I2C を使う場合はコメントアウトを解除してください
 //#define USE_MSSP1_I2C
@@ -76,6 +79,12 @@ void init_timer1(void);
 
 #ifdef USE_CCP1_COMPARE
 void init_ccp1_compare(void);
+#endif
+
+#ifdef USE_MSSP1_SPI
+void init_mssp1_spi(void);
+void mssp1_spi_putch( char data );
+int mssp1_spi_getch(void);
 #endif
 
 #ifdef USE_MSSP1_I2C

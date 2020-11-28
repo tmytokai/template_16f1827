@@ -66,6 +66,10 @@ void init(void)
     init_ccp1_compare();
 #endif
 
+#ifdef USE_MSSP1_SPI
+    init_mssp1_spi();
+#endif
+
 #ifdef USE_MSSP1_I2C
     init_mssp1_i2c();
 #endif
