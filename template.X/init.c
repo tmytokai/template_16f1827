@@ -66,6 +66,10 @@ void init(void)
     init_ccp1_compare();
 #endif
 
+#ifdef USE_CCP1_CAPTURE
+    init_ccp1_capture();
+#endif
+
 #ifdef USE_MSSP1_SPI
     init_mssp1_spi();
 #endif

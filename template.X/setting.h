@@ -26,8 +26,11 @@
 // タイマー割り込みを使う場合はコメントアウトを解除してください
 //#define USE_TIMER1
 
-// Compare 割り込みを使う場合はコメントアウトを解除してください
+// コンペア割り込みを使う場合はコメントアウトを解除してください
 //#define USE_CCP1_COMPARE
+
+// キャプチャ割り込みを使う場合はコメントアウトを解除してください
+//#define USE_CCP1_CAPTURE
 
 // SPI を使う場合はコメントアウトを解除してください
 //#define USE_MSSP1_SPI
@@ -79,6 +82,10 @@ void init_timer1(void);
 
 #ifdef USE_CCP1_COMPARE
 void init_ccp1_compare(void);
+#endif
+
+#ifdef USE_CCP1_CAPTURE
+void init_ccp1_capture(void);
 #endif
 
 #ifdef USE_MSSP1_SPI
