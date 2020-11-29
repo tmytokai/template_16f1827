@@ -17,12 +17,12 @@ void init_mssp1_spi(void)
     APFCON0bits.SDO1SEL = 1; // 15 ピンを SDO1 とします
     TRISB = TRISB | 0b00000010; // マスターモードでは SDI1 (RB1,7ピン)を入力モードにします(他は出力)
 
-    // mode0 なので SMP=0, CKE=1, CKP=0
+    // MODE0 → SMP=0, CKE=1, CKP=0、ビットオーダーはデフォルトで MSBFIRST (らしい)
     SSP1STAT = 0b01000000; // SMP=0, CKE=1
     SSP1CON1 = 0b00101010; // MSSP1 ON(SSP1EN=1)、CKP=0, SPIマスターモード(SSP1M=0b1010)
     SSP1CON2 = 0x00;
     SSP1CON3 = 0x00;
-    SSP1ADD = 1; // SCK1 ピンのクロック = 1MHz ( FOSC/(4*clock)-1 = 8 MHz/4M-1 = 1 )
+    SSP1ADD = 1; // クロック = 1MHz ( FOSC/(4*clock)-1 = 8 MHz/4M-1 = 1 )
 }
 
 // MSSP1 で 1 byte 送信
