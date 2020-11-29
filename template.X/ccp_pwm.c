@@ -15,6 +15,7 @@ void init_ccp1_pwm(void)
     // 0 をセットするとRB3(9 pin) を CCP1 の PWM 出力とします
     // 1 をセットするとRB0(6 pin) を CCP1 の PWM 出力とします
     // 詳しくはデータシート 118p を参照してください
+    // 今回はRB3(9 pin)を出力にします
     APFCON0bits.CCP1SEL = ? ;
 
     // 動作モードを設定します
@@ -23,16 +24,22 @@ void init_ccp1_pwm(void)
     CCP1CONbits.CCP1M = ? ;
 
     // タイマーを接続します
-    // 0b00 = Timer2、0b01 = Timer4、0b10 = Timer6
+    // 0b00 : Timer2
+    // 0b01 : Timer4
+    // 0b10 : Timer6
     // 詳しくはデータシート 206p を参照してください
     CCPTMRSbits.C1TSEL = ? ;
 
     // Timer2,4,6 の動作クロックは FOSC/4 で固定です
     
     // タイマーの prescale を設定します
-    // 0b00 = x1、0b01 = x4、0b10 = x16、0b11 = x64
+    // 0b00 : x1
+    // 0b01 : x4
+    // 0b10 : x16
+    // 0b11 : x64
     // PWM 周期やパルス幅の計算で使います
     // 詳しくはデータシート 191p を参照してください
+    // 今回は x64 にします
     T?CONbits.T?CKPS = ? ;
 
     // 1 をセットするとタイマーが ON になり PWM 出力が始まります
@@ -58,16 +65,22 @@ void init_ccp2_pwm(void)
     CCP2CONbits.CCP2M = ? ;
 
     // タイマーを接続します
-    // 0b00 = Timer2、0b01 = Timer4、0b10 = Timer6
+    // 0b00 : Timer2
+    // 0b01 : Timer4
+    // 0b10 : Timer6
     // 詳しくはデータシート 206p を参照してください
     CCPTMRSbits.C2TSEL = ? ;
 
     // Timer2,4,6 の動作クロックは FOSC/4 で固定です
     
     // タイマーの prescale を設定します
-    // 0b00 = x1、0b01 = x4、0b10 = x16、0b11 = x64
+    // 0b00 : x1
+    // 0b01 : x4
+    // 0b10 : x16
+    // 0b11 : x64
     // PWM 周期やパルス幅の計算で使います
     // 詳しくはデータシート 191p を参照してください
+    // 今回は x64 にします
     T?CONbits.T?CKPS = ? ;
 
     // 1 をセットするとタイマーが ON になり PWM 出力が始まります
@@ -90,16 +103,22 @@ void init_ccp3_pwm(void)
     CCP3CONbits.CCP3M = ? ;
 
     // タイマーを接続します
-    // 0b00 = Timer2、0b01 = Timer4、0b10 = Timer6
+    // 0b00 : Timer2
+    // 0b01 : Timer4
+    // 0b10 : Timer6
     // 詳しくはデータシート 206p を参照してください
     CCPTMRSbits.C3TSEL = ? ;
 
     // Timer2,4,6 の動作クロックは FOSC/4 で固定です
     
     // タイマーの prescale を設定します
-    // 0b00 = x1、0b01 = x4、0b10 = x16、0b11 = x64
+    // 0b00 : x1
+    // 0b01 : x4
+    // 0b10 : x16
+    // 0b11 : x64
     // PWM 周期やパルス幅の計算で使います
     // 詳しくはデータシート 191p を参照してください
+    // 今回は x64 にします
     T?CONbits.T?CKPS = ? ;
 
     // 1 をセットするとタイマーが ON になり PWM 出力が始まります
@@ -122,16 +141,22 @@ void init_ccp4_pwm(void)
     CCP4CONbits.CCP4M = ? ;
 
     // タイマーを接続します
-    // 0b00 = Timer2、0b01 = Timer4、0b10 = Timer6
+    // 0b00 : Timer2
+    // 0b01 : Timer4
+    // 0b10 : Timer6
     // 詳しくはデータシート 206p を参照してください
     CCPTMRSbits.C4TSEL = ? ;
 
     // Timer2,4,6 の動作クロックは FOSC/4 で固定です
     
     // タイマーの prescale を設定します
-    // 0b00 = x1、0b01 = x4、0b10 = x16、0b11 = x64
+    // 0b00 : x1
+    // 0b01 : x4
+    // 0b10 : x16
+    // 0b11 : x64
     // PWM 周期やパルス幅の計算で使います
     // 詳しくはデータシート 191p を参照してください
+    // 今回は x64 にします
     T?CONbits.T?CKPS = ? ;
 
     // 1 をセットするとタイマーが ON になり PWM 出力が始まります
