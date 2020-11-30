@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=adc.c ccp_compare.c ccp_pwm.c init.c input.c rb0int.c timer1.c uart.c ccp_capture.c main.c isr.c mssp_i2c.c mssp_spi.c
+SOURCEFILES_QUOTED_IF_SPACED=adc.c ccp_compare.c ccp_pwm.c init.c input.c rb0int.c timer1.c uart.c ccp_capture.c mssp_i2c.c mssp_spi.c main.c isr.c dac.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/adc.p1 ${OBJECTDIR}/ccp_compare.p1 ${OBJECTDIR}/ccp_pwm.p1 ${OBJECTDIR}/init.p1 ${OBJECTDIR}/input.p1 ${OBJECTDIR}/rb0int.p1 ${OBJECTDIR}/timer1.p1 ${OBJECTDIR}/uart.p1 ${OBJECTDIR}/ccp_capture.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/isr.p1 ${OBJECTDIR}/mssp_i2c.p1 ${OBJECTDIR}/mssp_spi.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/adc.p1.d ${OBJECTDIR}/ccp_compare.p1.d ${OBJECTDIR}/ccp_pwm.p1.d ${OBJECTDIR}/init.p1.d ${OBJECTDIR}/input.p1.d ${OBJECTDIR}/rb0int.p1.d ${OBJECTDIR}/timer1.p1.d ${OBJECTDIR}/uart.p1.d ${OBJECTDIR}/ccp_capture.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/isr.p1.d ${OBJECTDIR}/mssp_i2c.p1.d ${OBJECTDIR}/mssp_spi.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/adc.p1 ${OBJECTDIR}/ccp_compare.p1 ${OBJECTDIR}/ccp_pwm.p1 ${OBJECTDIR}/init.p1 ${OBJECTDIR}/input.p1 ${OBJECTDIR}/rb0int.p1 ${OBJECTDIR}/timer1.p1 ${OBJECTDIR}/uart.p1 ${OBJECTDIR}/ccp_capture.p1 ${OBJECTDIR}/mssp_i2c.p1 ${OBJECTDIR}/mssp_spi.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/isr.p1 ${OBJECTDIR}/dac.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/adc.p1.d ${OBJECTDIR}/ccp_compare.p1.d ${OBJECTDIR}/ccp_pwm.p1.d ${OBJECTDIR}/init.p1.d ${OBJECTDIR}/input.p1.d ${OBJECTDIR}/rb0int.p1.d ${OBJECTDIR}/timer1.p1.d ${OBJECTDIR}/uart.p1.d ${OBJECTDIR}/ccp_capture.p1.d ${OBJECTDIR}/mssp_i2c.p1.d ${OBJECTDIR}/mssp_spi.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/isr.p1.d ${OBJECTDIR}/dac.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/adc.p1 ${OBJECTDIR}/ccp_compare.p1 ${OBJECTDIR}/ccp_pwm.p1 ${OBJECTDIR}/init.p1 ${OBJECTDIR}/input.p1 ${OBJECTDIR}/rb0int.p1 ${OBJECTDIR}/timer1.p1 ${OBJECTDIR}/uart.p1 ${OBJECTDIR}/ccp_capture.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/isr.p1 ${OBJECTDIR}/mssp_i2c.p1 ${OBJECTDIR}/mssp_spi.p1
+OBJECTFILES=${OBJECTDIR}/adc.p1 ${OBJECTDIR}/ccp_compare.p1 ${OBJECTDIR}/ccp_pwm.p1 ${OBJECTDIR}/init.p1 ${OBJECTDIR}/input.p1 ${OBJECTDIR}/rb0int.p1 ${OBJECTDIR}/timer1.p1 ${OBJECTDIR}/uart.p1 ${OBJECTDIR}/ccp_capture.p1 ${OBJECTDIR}/mssp_i2c.p1 ${OBJECTDIR}/mssp_spi.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/isr.p1 ${OBJECTDIR}/dac.p1
 
 # Source Files
-SOURCEFILES=adc.c ccp_compare.c ccp_pwm.c init.c input.c rb0int.c timer1.c uart.c ccp_capture.c main.c isr.c mssp_i2c.c mssp_spi.c
+SOURCEFILES=adc.c ccp_compare.c ccp_pwm.c init.c input.c rb0int.c timer1.c uart.c ccp_capture.c mssp_i2c.c mssp_spi.c main.c isr.c dac.c
 
 
 CFLAGS=
@@ -159,6 +159,22 @@ ${OBJECTDIR}/ccp_capture.p1: ccp_capture.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/ccp_capture.d ${OBJECTDIR}/ccp_capture.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/ccp_capture.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/mssp_i2c.p1: mssp_i2c.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mssp_i2c.p1.d 
+	@${RM} ${OBJECTDIR}/mssp_i2c.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/mssp_i2c.p1  mssp_i2c.c 
+	@-${MV} ${OBJECTDIR}/mssp_i2c.d ${OBJECTDIR}/mssp_i2c.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/mssp_i2c.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/mssp_spi.p1: mssp_spi.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mssp_spi.p1.d 
+	@${RM} ${OBJECTDIR}/mssp_spi.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/mssp_spi.p1  mssp_spi.c 
+	@-${MV} ${OBJECTDIR}/mssp_spi.d ${OBJECTDIR}/mssp_spi.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/mssp_spi.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.p1.d 
@@ -175,21 +191,13 @@ ${OBJECTDIR}/isr.p1: isr.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/isr.d ${OBJECTDIR}/isr.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/isr.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/mssp_i2c.p1: mssp_i2c.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/dac.p1: dac.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/mssp_i2c.p1.d 
-	@${RM} ${OBJECTDIR}/mssp_i2c.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/mssp_i2c.p1  mssp_i2c.c 
-	@-${MV} ${OBJECTDIR}/mssp_i2c.d ${OBJECTDIR}/mssp_i2c.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/mssp_i2c.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/mssp_spi.p1: mssp_spi.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/mssp_spi.p1.d 
-	@${RM} ${OBJECTDIR}/mssp_spi.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/mssp_spi.p1  mssp_spi.c 
-	@-${MV} ${OBJECTDIR}/mssp_spi.d ${OBJECTDIR}/mssp_spi.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/mssp_spi.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/dac.p1.d 
+	@${RM} ${OBJECTDIR}/dac.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/dac.p1  dac.c 
+	@-${MV} ${OBJECTDIR}/dac.d ${OBJECTDIR}/dac.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/dac.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/adc.p1: adc.c  nbproject/Makefile-${CND_CONF}.mk
@@ -264,6 +272,22 @@ ${OBJECTDIR}/ccp_capture.p1: ccp_capture.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/ccp_capture.d ${OBJECTDIR}/ccp_capture.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/ccp_capture.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/mssp_i2c.p1: mssp_i2c.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mssp_i2c.p1.d 
+	@${RM} ${OBJECTDIR}/mssp_i2c.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/mssp_i2c.p1  mssp_i2c.c 
+	@-${MV} ${OBJECTDIR}/mssp_i2c.d ${OBJECTDIR}/mssp_i2c.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/mssp_i2c.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/mssp_spi.p1: mssp_spi.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mssp_spi.p1.d 
+	@${RM} ${OBJECTDIR}/mssp_spi.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/mssp_spi.p1  mssp_spi.c 
+	@-${MV} ${OBJECTDIR}/mssp_spi.d ${OBJECTDIR}/mssp_spi.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/mssp_spi.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.p1.d 
@@ -280,21 +304,13 @@ ${OBJECTDIR}/isr.p1: isr.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/isr.d ${OBJECTDIR}/isr.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/isr.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/mssp_i2c.p1: mssp_i2c.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/dac.p1: dac.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/mssp_i2c.p1.d 
-	@${RM} ${OBJECTDIR}/mssp_i2c.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/mssp_i2c.p1  mssp_i2c.c 
-	@-${MV} ${OBJECTDIR}/mssp_i2c.d ${OBJECTDIR}/mssp_i2c.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/mssp_i2c.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/mssp_spi.p1: mssp_spi.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/mssp_spi.p1.d 
-	@${RM} ${OBJECTDIR}/mssp_spi.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/mssp_spi.p1  mssp_spi.c 
-	@-${MV} ${OBJECTDIR}/mssp_spi.d ${OBJECTDIR}/mssp_spi.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/mssp_spi.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/dac.p1.d 
+	@${RM} ${OBJECTDIR}/dac.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/dac.p1  dac.c 
+	@-${MV} ${OBJECTDIR}/dac.d ${OBJECTDIR}/dac.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/dac.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

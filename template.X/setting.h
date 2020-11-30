@@ -38,6 +38,9 @@
 // I2C を使う場合はコメントアウトを解除してください
 //#define USE_MSSP1_I2C
 
+// D/A変換を使う場合はコメントアウトを解除してください
+//#define USE_DAC
+
 #include <xc.h>
 
 void init(void);
@@ -100,6 +103,10 @@ void mssp1_i2c_start(void);
 void mssp1_i2c_stop(void);
 void mssp1_i2c_putch( char data );
 int mssp1_i2c_getch( unsigned char nack );
+#endif
+
+#ifdef USE_DAC
+void init_dac(void);
 #endif
 
 #endif

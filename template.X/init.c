@@ -77,4 +77,8 @@ void init(void)
 #ifdef USE_MSSP1_I2C
     init_mssp1_i2c();
 #endif
+
+#ifdef USE_DAC
+    init_dac();
+#endif
 }
