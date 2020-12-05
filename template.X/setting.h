@@ -93,6 +93,7 @@ void init_ccp1_capture(void);
 
 #ifdef USE_MSSP1_SPI
 void init_mssp1_spi(void);
+void mssp1_spi_setmode(char mode);
 void mssp1_spi_putch( char data );
 int mssp1_spi_getch(void);
 #endif
