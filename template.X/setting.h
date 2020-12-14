@@ -26,6 +26,7 @@
 // タイマー割り込みを使う場合はコメントアウトを解除してください
 //#define USE_TIMER0
 //#define USE_TIMER1
+//#define USE_TIMER2
 
 // コンペア割り込みを使う場合はコメントアウトを解除してください
 //#define USE_CCP1_COMPARE
@@ -86,6 +87,10 @@ void init_timer0(void);
 
 #ifdef USE_TIMER1
 void init_timer1(void);
+#endif
+
+#ifdef USE_TIMER2
+void init_timer2(void);
 #endif
 
 #ifdef USE_CCP1_COMPARE

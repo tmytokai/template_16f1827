@@ -65,7 +65,11 @@ void init(void)
 #ifdef USE_TIMER1
     init_timer1();
 #endif
-    
+
+#ifdef USE_TIMER2
+    init_timer2();
+#endif
+
 #ifdef USE_CCP1_COMPARE
     init_ccp1_compare();
 #endif
