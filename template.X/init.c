@@ -57,7 +57,11 @@ void init(void)
 #ifdef USE_RB0INT
     init_rb0int();
 #endif
-    
+
+#ifdef USE_TIMER0
+    init_timer0();
+#endif
+
 #ifdef USE_TIMER1
     init_timer1();
 #endif

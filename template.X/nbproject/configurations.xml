@@ -21,7 +21,7 @@
         <itemPath>init.c</itemPath>
         <itemPath>input.c</itemPath>
         <itemPath>rb0int.c</itemPath>
-        <itemPath>timer1.c</itemPath>
+        <itemPath>timer.c</itemPath>
         <itemPath>uart.c</itemPath>
         <itemPath>ccp_capture.c</itemPath>
         <itemPath>mssp_i2c.c</itemPath>

@@ -24,6 +24,7 @@
 //#define USE_RB0INT
 
 // タイマー割り込みを使う場合はコメントアウトを解除してください
+//#define USE_TIMER0
 //#define USE_TIMER1
 
 // コンペア割り込みを使う場合はコメントアウトを解除してください
@@ -77,6 +78,10 @@ void init_ccp4_pwm(void);
 
 #ifdef USE_RB0INT
 void init_rb0int(void);
+#endif
+
+#ifdef USE_TIMER0
+void init_timer0(void);
 #endif
 
 #ifdef USE_TIMER1
