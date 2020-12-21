@@ -16,9 +16,14 @@
 // DAC 初期化
 void init_dac(void)
 {
-    // DAC ON(DACEN=1)、DACOUT(1ピン)使用(DACOE=1)
+    // 1 をセットするとDACOUT(1ピン)から出力します
+    // 0 をセットすると内部だけで使います
     // 詳しくはデータシート 154p を参照してください
-    DACCON0 = 0b10100000 ;
+    DACCON0bits.DACOE = ? ;
+
+    // 1 をセットすると DAC を ON にします
+    // 詳しくはデータシート 154p を参照してください
+    DACCON0bits.DACEN = ? ;
 }
 
 #endif

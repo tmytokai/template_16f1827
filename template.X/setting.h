@@ -43,6 +43,9 @@
 // D/A変換を使う場合はコメントアウトを解除してください
 //#define USE_DAC
 
+// コンパレータを使う場合はコメントアウトを解除してください
+//#define USE_COMPARATOR1
+
 #include <xc.h>
 
 void init(void);
@@ -118,6 +121,11 @@ int mssp1_i2c_getch( unsigned char nack );
 
 #ifdef USE_DAC
 void init_dac(void);
+#endif
+
+#ifdef USE_COMPARATOR1
+void init_comparator1(void);
+int comparator1(int chn, int dacr);
 #endif
 
 #endif

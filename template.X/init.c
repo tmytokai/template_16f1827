@@ -89,4 +89,8 @@ void init(void)
 #ifdef USE_DAC
     init_dac();
 #endif
+
+#ifdef USE_COMPARATOR1
+    init_comparator1();
+#endif
 }

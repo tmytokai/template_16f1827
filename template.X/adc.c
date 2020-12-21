@@ -37,7 +37,7 @@ void init_adc(void)
     ADCON1bits.ADFM = ? ;
 }
 
-// ADC 変換
+// ADC 実行
 int adc(int chn){
     
     // 入力するチャンネル(ポート)の設定です

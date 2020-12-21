@@ -27,6 +27,7 @@
         <itemPath>mssp_i2c.c</itemPath>
         <itemPath>mssp_spi.c</itemPath>
         <itemPath>dac.c</itemPath>
+        <itemPath>comparator.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>isr.c</itemPath>
