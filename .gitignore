@@ -3,3 +3,4 @@
 /template.X/debug/
 /template.X/dist/
 /tmp/
+*.dump

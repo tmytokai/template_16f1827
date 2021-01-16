@@ -1,8 +1,13 @@
 #ifndef _SETTING_H
 #define _SETTING_H
 
-// __delay_ms 関数を使う場合は define する必要があります
-// init.c 内の OSCCON の設定と合わせてください(今回は 4 Mhz)
+// オシレータ(発振回路)の設定です
+// 今回は FOSC(Frequency of Oscillator) を 4 MHz (SPLLEN=0, IRCF=0b1101) としています
+// 詳しくはデータシート 67p を参照してください
+#define _OSCCON 0b01101000
+
+// __delay_ms 関数を使う場合に define する必要がある設定です
+// 上のオシレータの設定と周波数を合わせてください(今回は 4 Mhz)
 #define _XTAL_FREQ 4000000
 
 // デジタル入力を使う場合はコメントアウトを解除してください
