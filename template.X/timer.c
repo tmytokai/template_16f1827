@@ -10,7 +10,7 @@
 
 void init_timer0(void)
 {
-    // Timer0 は 8 bit カウンターです
+    // Timer0 は 8 bit タイマーです
     // 8 bit カウンター TMR0 の値が 255 から 0 に戻る時に
     // 割り込みフラグ INTCONbits.TMR0IF に 1 がセットされて割り込みが生じます
 
@@ -70,7 +70,7 @@ void init_timer0(void)
 
 void init_timer1(void)
 {
-    // Timer1 は 16 bit カウンターです
+    // Timer1 は 16 bit タイマーです
     // 16 bit カウンター TMR1 の値が 65535 から 0 に戻る時に
     // 割り込みフラグ PIR1bits.TMR1IF に 1 がセットされて割り込みが生じます
 
@@ -132,8 +132,8 @@ void init_timer1(void)
 
 void init_timer2(void)
 {
-    // Timer2 は 8 bit カウンターです
-    // 8 bit カウンター TMR2 の値が PR2 の値と一致すると Postscaler がカウントアップされ
+    // Timer2 は 8 bit タイマーです (内部的には 10 bit)
+    // 8 bit カウンター TMR2 の値が PR2 の値と一致すると TMR2 が 0 にリセットされて Postscaler がカウントアップされます
     // Postscaler が指定した postscale 回だけカウントアップされると
     // 割り込みフラグ PIR1bits.TMR2IF に 1 がセットされて割り込みが生じます
 
