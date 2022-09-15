@@ -52,6 +52,7 @@
 //#define USE_COMPARATOR1
 
 #include <xc.h>
+#include "../include/proc/pic16f1827.h"
 
 void init(void);
 
@@ -62,11 +63,16 @@ void init_input(void);
 #ifdef USE_UART
 #include <stdio.h>
 void init_uart(void);
+#if __XC8_VERSION < 2000
+char getch(void);
+#else
+int getch(void);
+#endif
 #endif
 
 #ifdef USE_ADC
 void init_adc(void);
-int adc(int chn);
+int adc(unsigned char chn);
 #endif
 
 #ifdef USE_CCP1_PWM

@@ -84,7 +84,6 @@ void init_timer1(void)
     // 0b00 : FOSC/4
     // 0b01 : FOSC
     // 詳しくはデータシート 185p を参照してください
-    // 今回は FOSC/4 とします
     T1CONbits.TMR1CS = ? ;
     
     // Timer1 の prescale をセットします
@@ -93,7 +92,6 @@ void init_timer1(void)
     // 0b01 : x2
     // 0b00 : x1
     // 詳しくはデータシート 185p を参照してください
-    // 今回は x8 にします
     T1CONbits.T1CKPS = ? ;
     
     // 1 をセットすると Timer1 が ON になります

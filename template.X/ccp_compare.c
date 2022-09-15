@@ -23,7 +23,6 @@ void init_ccp1_compare(void)
     // 0 をセットするとRB3(9 pin) を CCP1 のコンペア出力とします
     // 1 をセットするとRB0(6 pin) を CCP1 のコンペア出力とします
     // 詳しくはデータシート 118p を参照してください
-    // 今回はRB3(9 pin)を出力にします
     APFCON0bits.CCP1SEL = ? ;
 
     // 動作モードを設定します
@@ -42,7 +41,6 @@ void init_ccp1_compare(void)
     // 0b00 : FOSC/4
     // 0b01 : FOSC
     // 詳しくはデータシート 185p を参照してください
-    // 今回は FOSC/4 とします
     T1CONbits.TMR1CS = ? ;
     
     // Timer1 の prescale をセットします
@@ -51,7 +49,6 @@ void init_ccp1_compare(void)
     // 0b01 : x2
     // 0b00 : x1
     // 詳しくはデータシート 185p を参照してください
-    // 今回は x8 にします
     T1CONbits.T1CKPS = ? ;
 
     // 1 をセットすると Timer1 が ON になります

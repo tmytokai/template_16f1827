@@ -38,7 +38,7 @@ void init_adc(void)
 }
 
 // ADC 実行
-int adc(int chn){
+int adc(unsigned char chn){
     
     // 入力するチャンネル(ポート)の設定です
     // ANx の x を指定します (xの範囲は0〜11)
