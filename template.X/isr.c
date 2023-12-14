@@ -14,10 +14,6 @@ void interrupt isr(void)
 void __interrupt () isr(void) 
 #endif
 {
-    INTCONbits.GIE = 0; // 割り込み処理中に再度割り込みがかからないようにします
-
     // この割り込み関数は全ての割り込み処理で共通なので
     // 立っている割り込みフラグを見てどの割り込みが生じたか判断します
-
-    INTCONbits.GIE = 1; // 割り込み処理が終わったので再び割り込みを許可します
 }
